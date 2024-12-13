@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "Kaiten Story Points Average Service Time",
+    "version": "0.1",
+    "permissions": ["tabs", "activeTab", "scripting", "storage"],
+    "host_permissions": ["https://*.kaiten.ru/*"],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://*.kaiten.ru/*"],
+            "js": ["main.js"]
+        }
+    ],
+    "web_accessible_resources": [{
+        "matches": ["https://*.kaiten.ru/*"],
+        "resources": [
+            "local-settings.js",
+            "kaitenApi.js",
+            "cacheApiWrapper.js"
+        ]
+    }]
+}
