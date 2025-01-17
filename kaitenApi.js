@@ -47,7 +47,7 @@ export const fetchKaitenAllData = async () => {
                     time_blocked_sum: obj.time_blocked_sum,
                     blocked: obj.blocked,
                     size_text: obj.size_text,
-                    start_work_at: obj.first_moved_to_in_progress_at,
+                    start_work_at: obj.first_moved_to_in_progress_at || obj.created,
                     completed_at: obj.completed_at || obj.last_moved_to_done_at,
                     responsible: responsibleMember?.full_name || obj.owner?.full_name || "Unassigned"
                 }

@@ -46,8 +46,8 @@ that.components = {
     const validCards = kaitenData.filter(card =>
         card.start_work_at &&
         card.completed_at &&
-        card.size_text &&
-        card.size_text.includes("SP")
+        card.size_text 
+        // && card.size_text.includes("SP")
     );
 
     if (validCards.length === 0) {
