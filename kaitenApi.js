@@ -1,6 +1,7 @@
 
-const CACHE_PREFIX = "kaiten-cache"; // Префикс для вашего кэша
+const CACHE_PREFIX = "kaiten-stats-extension-cache"; // Префикс для вашего кэша
 const CACHE_EXPIRATION_TIME = 15 * 60 * 1000; // 15 минут в миллисекундах
+const PAGE_SIZE = 100;
 
 const CacheApiWrapper = (await import(chrome.runtime.getURL("cacheApiWrapper.js"))).CacheApiWrapper;
 

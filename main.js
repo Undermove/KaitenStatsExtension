@@ -1,12 +1,10 @@
 // noinspection ExceptionCaughtLocallyJS
-const that = this;
 
-const PAGE_SIZE = 100;
+const that = this;
 
 chrome.storage.local.get(['API_URL', 'ACCESS_TOKEN', 'OPENAI_KEY'], (result) => {
     that.API_URL = result.API_URL;
     that.ACCESS_TOKEN = result.ACCESS_TOKEN;
-    that.OPENAI_KEY = result.OPENAI_KEY;
 });
 
 // loaded from styles.js
@@ -31,10 +29,10 @@ that.components = {
     that.SPACE_ID = extractSpaceId(tabUrl)
     
     const kaitenApi = await importAsync("kaitenApi.js");
-    that.fetchKaitenDataWithCache = kaitenApi.fetchKaitenDataWithCache;
+    that.fetchKaitenAllData = kaitenApi.fetchKaitenAllData;
     
-    const kaitenData = await that.fetchKaitenDataWithCache();
-    console.log(kaitenData);
+    const kaitenData = await that.fetchKaitenAllData();
+    console.log("Processing data...");
 
 
     if (!kaitenData || kaitenData.length === 0) {

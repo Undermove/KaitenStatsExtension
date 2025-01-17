@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Kaiten Story Points Average Service Time",
-    "version": "0.1",
+    "version": "1.0",
     "permissions": ["tabs", "activeTab", "scripting", "storage"],
     "host_permissions": ["https://*.kaiten.ru/*"],
     "background": {
